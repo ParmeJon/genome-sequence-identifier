@@ -11,6 +11,7 @@ class MainResults extends React.Component {
   }
 
   // Search function looks through a single string seq and comparing it to the mutation
+// indexs are where the mutations start
 
   search=(string, seq)=>{
   var indexes = []
