@@ -18,6 +18,7 @@ export const convertControlSeq = (controlSeq) => {
 export const convertPoolSeq = (poolSeq) => {
   const poolSeqFilePath = poolSeq[0]
   // let testFile = document.getElementById("testfile").files[0]
+  
   return dispatch => {
   return Papa.parse(poolSeqFilePath, {
     complete: function(results) {

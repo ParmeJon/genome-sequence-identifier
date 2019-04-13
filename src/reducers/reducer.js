@@ -16,7 +16,9 @@ const reducer = (state = initialState, action) => {
 
     case('CONVERT_POOL_SEQ'): {
       console.log(action.payload)
-      return {...state, poolSeq: action.payload.data[0]}
+      let objOfArr = action.payload.data.map(arr => ({id: parseInt(arr[0]), dna: arr[1]}))
+      console.log(objOfArr)
+      return {...state, poolSeq: objOfArr}
     }
 
     default:
