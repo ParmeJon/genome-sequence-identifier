@@ -21,6 +21,7 @@ import MailIcon from '@material-ui/icons/Mail';
 import MainForm from '../components/MainForm'
 import {Switch, Route} from 'react-router-dom'
 import { withRouter } from 'react-router'
+import MainResults from '../components/MainResults'
 
 const drawerWidth = 240;
 
@@ -154,7 +155,9 @@ class PersistentDrawerLeft extends React.Component {
           <div className={classes.drawerHeader} />
 
           <Switch>
+            <Route exact path='/main_results' component={MainResults} />
             <Route exact path='/' component={MainForm} />
+
           </ Switch>
 
         </main>
