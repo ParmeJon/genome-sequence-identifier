@@ -1,68 +1,17 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+4/13/2019 Access Labs Hackathon sponsored by Blockstack and 2U
 
-## Available Scripts
+Team 2: Redmond Chan, Jonathan "SY" Chan, Joseph Gao, Weijun Huang, Benson Yu Github: redmondchan, ParmeJon, josephcake, WTK00000, Bennimaru
 
-In the project directory, you can run:
+Design Statement How might we improve patient identification for genomic researchers, so that they can find patients with desired genetic markers?
 
-### `npm start`
+What problem are we solving? There are over 6000 known single gene disorders with only ~5% of them having a treatment option. There is still lots of research to be done and researchers need ways to quickly identify the patients that have these mutation sequences.
 
-Runs the app in the development mode.<br>
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+Who is the user that is suffering real pain from the problem? Researchers in the field of genomics when looking for patients to enroll into clinical trials. They need to find the patients from a pool of applicants that have the single point mutations that they are interested in.
 
-The page will reload if you make edits.<br>
-You will also see any lint errors in the console.
+What will the situation look like for the user when the user’s problem is addressed? For user convenience, files can be uploaded in csv format or the user can input desired sequences manually.
 
-### `npm test`
+Usage case 1: User can upload a control sequence for a known genetic defect. User then uploads a set of sequences from a pool of patients. Patients with matching sequences will be highlighted.
 
-Launches the test runner in the interactive watch mode.<br>
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Working on usage case 2: User will be able to upload a file with a control sequence from a healthy specimen. User then uploads a set of sequences from a pool of patients. The patients whose sequences have mismatches with the control sequence will be filtered out and the locations of where the mismatches occur will be highlighted.
 
-### `npm run build`
-
-Builds the app for production to the `build` folder.<br>
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.<br>
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+Project was created with React, Redux. No API's were used in the making of this app.
