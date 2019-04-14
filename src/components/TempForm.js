@@ -8,7 +8,7 @@ class TempForm extends React.Component {
 
 state = {
   title: [],
-  controlSeq: [],
+  controlSeq: null,
   patientPool: [],
   knownMutationSeq: ''
 }
@@ -16,7 +16,9 @@ state = {
 handleSubmit= (e)=> {
   e.preventDefault()
   console.log(this.state)
-  // this.props.convertControlToJson(this.state.controlSeq)
+  if(this.state.controlSeq !== null){
+    this.props.convertControlToJson(this.state.controlSeq)
+  }
   this.props.establishKnownMutation(this.state.knownMutationSeq)
   this.props.convertPoolToJson(this.state.patientPool)
   this.props.establishKnownMutation(this.state.knownMutationSeq)
