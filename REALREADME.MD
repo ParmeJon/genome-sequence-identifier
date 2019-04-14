@@ -1,7 +1,7 @@
 4/13/2019 Access Labs Hackathon sponsored by Blockstack and 2U
 
 Team 2: Redmond Chan, Jonathan "SY" Chan, Joseph Gao, Weijun Huang, Benson Yu
-
+Github: redmondchan, ParmeJon, josephcake, WTK00000, Bennimaru
 
 Design Statement
 How might we improve patient identification for genomic researchers, so that they can find patients with desired genetic markers?
@@ -16,9 +16,8 @@ Researchers in the field of genomics when looking for patients to enroll into cl
 3. What will the situation look like for the user when the user’s problem is addressed?
 For user convenience, files can be uploaded in csv format or the user can input desired sequences manually.
 
-Usage case 1: User will be able to upload a control sequence from a healthy specimen. User then uploads a set of sequences from a pool of patients. The patients whose sequences have mismatches with the control sequence will be filtered out and the locations of where the mismatches occur will be highlighted.
+Usage case 1: User can upload a control sequence for a known genetic defect. User then uploads a set of sequences from a pool of patients. Patients with matching sequences will be highlighted.
 
-Usage case 2: User can upload a control sequence for a known genetic defect. User then uploads a set of sequences from a pool of patients. Patients with matching sequences will be highlighted.
-
+**Working on usage case 2: User will be able to upload a file with a control sequence from a healthy specimen. User then uploads a set of sequences from a pool of patients. The patients whose sequences have mismatches with the control sequence will be filtered out and the locations of where the mismatches occur will be highlighted.**
 
 Project was created with React, Redux. No API's were used in the making of this app.
