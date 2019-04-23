@@ -1,7 +1,8 @@
 const initialState = {
   controlSeq: [],
   poolSeq: [],
-  knownMutation: null
+  knownMutation: null,
+  colors: []
 }
 
 const reducer = (state = initialState, action) => {
@@ -15,6 +16,9 @@ const reducer = (state = initialState, action) => {
     case('ESTABLISH_MUTATION'): {
       console.log("MUTATION", action.payload)
       return {...state, knownMutation: action.payload}
+    }
+    case('PASS_COLOR'):{
+      return {...state, colors: action.payload}
     }
 
     case('CONVERT_POOL_SEQ'): {

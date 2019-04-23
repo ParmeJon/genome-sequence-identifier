@@ -10,7 +10,9 @@ state = {
   title: [],
   controlSeq: null,
   patientPool: [],
-  knownMutationSeq: ''
+  knownMutationSeq: '',
+  color: null,
+  colors: []
 }
 
 handleSubmit= (e)=> {
@@ -39,16 +41,25 @@ handleChange = (e) => {
 
 
   render(){
+    let color = []
+
+    if(this.state.color !==null){
+      this.state.color.split(this.state.knownMutation).forEach(sub => {
+        color.push(<span>{sub}</span>)
+        color.push(<span style={{color: "red"}}>{this.state.input4}</span> )
+     })
+      color.pop()
+   }
+   this.props.passcolor(color)
 
     return(
       <div>
         <p> Temp Form </p>
         <form onSubmit={this.handleSubmit}>
-          <label>Title Search</label><br></br>
-          <input type="textField" name="title" rows="20" cols="50" name="title" placeholder="Huntington's disease" onChange={this.handleChange}></input> <br></br>
+
 <br></br>
           <label>Single Control DNA Sequences (.csv)</label><br></br>
-          <input type="file" name="title" id="testfile" name="controlSeq" onChange={this.handleChangeFile}></input> <br></br>
+          <input type="text" name="title"  name="color" onChange={this.handleChange}></input> <br></br>
 <br></br>
           <label>Known DNA mutation sequence (typing)</label><br></br>
           <input type="textarea" name="knownMutationSeq" placeholder="Known DNA mutation sequence" onChange={this.handleChange}></input> <br></br>
@@ -59,7 +70,9 @@ handleChange = (e) => {
 
           <button>Compute</button>
         </form>
-
+        <div>
+          {color}
+        </div>
       </div>
     )
   }
@@ -69,7 +82,8 @@ handleChange = (e) => {
 const mapDispatchToProps = (dispatch) => ({
   convertControlToJson: (control) => dispatch(convertControlSeq(control)),
   convertPoolToJson: (pool) => dispatch(convertPoolSeq(pool)),
-  establishKnownMutation: (mutation) => dispatch({type: 'ESTABLISH_MUTATION', payload: mutation})
+  establishKnownMutation: (mutation) => dispatch({type: 'ESTABLISH_MUTATION', payload: mutation}),
+  passcolor: (colors) => dispatch({type: 'PASS_COLOR', payload: colors})
 })
 
 export default connect(null, mapDispatchToProps)(withRouter(TempForm))

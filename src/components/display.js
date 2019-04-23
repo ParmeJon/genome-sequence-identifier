@@ -23,11 +23,44 @@ let indexes = []
       for(let i = 0; i<obj.dna.length; i++){
         const n=seq.length
         if(obj.dna.substring(i, i+n)===seq){
-          indexes.push({ idOfPt: obj.id , index: {[i]: obj.dna.substring(i, i+n)}})
+          indexes.push({ idOfPt: obj.id , index: [i]})
         }
     }
   })
   return indexes
+}
+
+function sortdata(arr){
+  let result = [];
+  let newResult
+
+
+
+  arr.forEach(a=>{
+    if(!result.includes(`{"idOfPt": ${a.idOfPt}, "index": []}`)){
+      result.push(`{"idOfPt": ${a.idOfPt}, "index": []}`)
+    }
+  })
+
+  newResult = result.map(a=> JSON.parse(a))
+
+
+  for(let i=0; i<arr.length;i++){
+
+
+                for(let j = 0; j < newResult.length; j++){
+                  if(newResult[j].idOfPt === arr[i].idOfPt){
+                    console.log([newResult[j].idOfPt, newResult[j].index])
+                    newResult[j].index.push(arr[i].index[0])
+                    console.log(arr[i].index[0])
+                  }else {
+
+                  }
+
+                }
+                console.log(newResult)
+      }
+      return newResult
 }
 
 function CenteredGrid(props) {
@@ -35,7 +68,12 @@ function CenteredGrid(props) {
 
  let x = search(props.poolSeq, props.knownMutation)
  console.log(x)
- let arrOfPtDivs = x.map(pt => <div> id: {pt.idOfPt}, affected index: {JSON.stringify(pt.index)}</div>)
+ let arrOfPtDivs = x.map(pt => <div> id: {pt.idOfPt}, affected index: {pt.index}</div>)
+
+ let newArrofPtDivs = sortdata(x)
+ console.log(newArrofPtDivs)
+
+ let resultDivs = newArrofPtDivs.map(pt => <div> id: {pt.idOfPt}, affected index: {pt.index.join(', ')}</div>)
 
  return (
    <div className={classes.root}>
@@ -59,7 +97,7 @@ function CenteredGrid(props) {
          <Paper className={classes.paper}>
            <div>
              <h1>Affected Patients</h1>
-             {arrOfPtDivs}
+             {resultDivs}
            </div>
          </Paper>
        </Grid>

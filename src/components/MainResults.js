@@ -8,7 +8,8 @@ class MainResults extends React.Component {
 
 
   state = {
-    result: []
+    result: [],
+    color: []
   }
 
   search=(arrOfObjects, seq)=>{
@@ -19,7 +20,7 @@ class MainResults extends React.Component {
         for(let i = 0; i<obj.dna.length; i++){
           const n=seq.length
           if(obj.dna.substring(i, i+n)===seq){
-            indexes.push({ idOfPt: obj.id , index: {[i]: obj.dna.substring(i, i+n)}})
+            indexes.push({ idOfPt: obj.id , index: [i]})
           }
       }
     })
